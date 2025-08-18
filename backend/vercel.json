@@ -1,5 +1,14 @@
 {
-  "functions": { "api/**/*.{ts,js}": { "runtime": "nodejs20.x" } },
+  "buildCommand": "expo export -p web",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/"
+    }
+  ],
   "crons": [
     { "path": "/api/cron/nightly-oura?key=${CRON_SECRET}", "schedule": "0 4 * * *" },
     { "path": "/api/cron/daily-agent?key=${CRON_SECRET}", "schedule": "0 7 * * *" },
