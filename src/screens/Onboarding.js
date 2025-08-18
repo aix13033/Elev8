@@ -13,7 +13,7 @@ export default function Onboarding({ navigation }) {
 
   return (
     <View>
-      <Text>Welcome to HealthApp</Text>
+      <Text>Welcome to Elev8</Text>
       <TextInput placeholder="Email" value={email} onChangeText={setEmail} />
       <TextInput placeholder="Password" secureTextEntry value={password} onChangeText={setPassword} />
       <Button title="Sign Up" onPress={handleSignup} />
