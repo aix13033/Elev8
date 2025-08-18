@@ -22,3 +22,14 @@ Run locally:
 npm install
 npm start
 ```
+
+### Environment Variables
+
+The application uses the following environment variables:
+
+- `EXPO_PUBLIC_SUPABASE_URL`: Public URL of your Supabase instance for the client
+- `EXPO_PUBLIC_SUPABASE_ANON_KEY`: Anonymous public API key for the Supabase project
+- `SUPABASE_URL`: Server-side Supabase instance URL
+- `SUPABASE_SERVICE_ROLE`: Service role key for privileged Supabase access on the server
+- `OPENAI_API_KEY`: API key used to authenticate with OpenAI services
+- `OPENAI_MODEL`: *(Optional)* model name to override the default OpenAI model
