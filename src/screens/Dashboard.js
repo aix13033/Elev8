@@ -1,18 +1,12 @@
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
-import { useRouter } from 'expo-router';
 
-export default function Onboarding() {
-  const router = useRouter();
-
+export default function Dashboard({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Elev8 HealthApp</Text>
-      <Text style={styles.subtitle}>Your personal health assistant</Text>
-      <Button 
-        title="Get Started" 
-        onPress={() => router.push('/dashboard')} 
-      />
+      <Text style={styles.title}>Dashboard</Text>
+      <Text style={styles.subtitle}>Track your health metrics here</Text>
+      <Button title="Open Chat" onPress={() => navigation.navigate('Chat')} />
     </View>
   );
 }
