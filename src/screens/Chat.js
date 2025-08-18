@@ -1,10 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { GiftedChat } from 'gifted-chat';
-import { useRouter } from 'expo-router';
 
 export default function Chat() {
   const [messages, setMessages] = useState([]);
-  const router = useRouter();
 
   useEffect(() => {
     setMessages([
@@ -21,7 +19,9 @@ export default function Chat() {
   }, []);
 
   const onSend = useCallback(async (newMessages = []) => {
-    setMessages(previousMessages => GiftedChat.append(previousMessages, newMessages));
+    setMessages(previousMessages =>
+      GiftedChat.append(previousMessages, newMessages)
+    );
 
     try {
       const response = await fetch('/api/healthgpt', {
@@ -47,10 +47,11 @@ export default function Chat() {
         },
       };
 
-      setMessages(previousMessages => GiftedChat.append(previousMessages, botMessage));
+      setMessages(previousMessages =>
+        GiftedChat.append(previousMessages, botMessage)
+      );
     } catch (error) {
       console.error('Error fetching response:', error);
-      // Optionally add an error message to the chat
     }
   }, []);
 
