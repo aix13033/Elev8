@@ -1,4 +1,4 @@
-// Updated vercel.json
+
 {
   "buildCommand": "./node_modules/.bin/expo export -p web",
   "outputDirectory": "dist",
