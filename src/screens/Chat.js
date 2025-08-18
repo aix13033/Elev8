@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { GiftedChat } from 'gifted-chat';
+import { GiftedChat } from 'react-native-gifted-chat';
 
 export default function Chat() {
   const [messages, setMessages] = useState([]);
