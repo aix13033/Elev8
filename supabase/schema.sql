@@ -36,12 +36,23 @@ create table if not exists data_progress(
   updated_at timestamptz default now()
 );
 
+create table if not exists scores(
+  id bigserial primary key,
+  user_id uuid not null,
+  date date not null,
+  score int not null,
+  components jsonb
+);
+create unique index if not exists scores_uid_date on scores(user_id, date);
+
 alter table wearable_daily enable row level security;
 alter table labs enable row level security;
 alter table meals enable row level security;
 alter table data_progress enable row level security;
+alter table scores enable row level security;
 
 create policy "owner_wearable" on wearable_daily for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 create policy "owner_labs" on labs for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 create policy "owner_meals" on meals for all using (user_id = auth.uid()) with check (user_id = auth.uid());
 create policy "owner_prog" on data_progress for all using (user_id = auth.uid()) with check (user_id = auth.uid());
+create policy "owner_scores" on scores for all using (user_id = auth.uid()) with check (user_id = auth.uid());

@@ -11,6 +11,7 @@ This project is a cloud-first health optimization platform using React Native (f
 - Meal photo AI analysis
 - Adaptive AI health agent
 - Progress dashboard
+- Inflammation score calculation endpoint
 
 ## Deployment
 - Frontend: Expo/React Native (deployed via Expo Go or App Store/Play Store)
@@ -33,3 +34,7 @@ The application uses the following environment variables:
 - `SUPABASE_SERVICE_ROLE`: Service role key for privileged Supabase access on the server
 - `OPENAI_API_KEY`: API key used to authenticate with OpenAI services
 - `OPENAI_MODEL`: *(Optional)* model name to override the default OpenAI model
+ 
+### API
+
+- `POST /api/calculate-score` – accepts metrics such as HRV, RHR, sleep score, lab values, and nutrition adherence and returns a 0–100 inflammation score with component breakdown.
