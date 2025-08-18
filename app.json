@@ -15,8 +15,6 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "web": {
-      "bundler": "webpack"
-    }
+    "scheme": "elev8"
   }
 }
