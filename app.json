@@ -1,3 +1,4 @@
+// Updated app.json
 {
   "expo": {
     "name": "HealthApp",
@@ -14,6 +15,9 @@
     },
     "updates": {
       "fallbackToCacheTimeout": 0
+    },
+    "web": {
+      "bundler": "webpack"
     }
   }
 }

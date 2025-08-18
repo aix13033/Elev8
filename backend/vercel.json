@@ -1,5 +1,6 @@
+// Updated vercel.json
 {
-  "buildCommand": "npx expo export -p web",
+  "buildCommand": "./node_modules/.bin/expo export -p web",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "framework": null,
