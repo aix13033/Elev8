@@ -1,6 +1,6 @@
 
 {
-  "functions": { "api/**/*.{ts,js}": { "runtime": "nodejs22.x" } },
+  "functions": { "api/**/*.{ts,js}": { "runtime": "nodejs20.x" } },
   "crons": [
     { "path": "/api/cron/nightly-oura?key=${CRON_SECRET}", "schedule": "0 4 * * *" },
     { "path": "/api/cron/daily-agent?key=${CRON_SECRET}", "schedule": "0 7 * * *" },
