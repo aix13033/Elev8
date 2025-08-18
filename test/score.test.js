@@ -1,5 +1,5 @@
 import assert from 'assert';
-import { calculateScore } from '../lib/score.js';
+import { calculateScore } from '../backend/lib/score.js';
 
 // Basic sanity check
 const result = calculateScore({

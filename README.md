@@ -26,15 +26,23 @@ npm start
 
 ### Environment Variables
 
-The application uses the following environment variables:
+Set the following environment variables for development and deployment:
 
-- `EXPO_PUBLIC_SUPABASE_URL`: Public URL of your Supabase instance for the client
-- `EXPO_PUBLIC_SUPABASE_ANON_KEY`: Anonymous public API key for the Supabase project
-- `SUPABASE_URL`: Server-side Supabase instance URL
-- `SUPABASE_SERVICE_ROLE`: Service role key for privileged Supabase access on the server
-- `OPENAI_API_KEY`: API key used to authenticate with OpenAI services
-- `OPENAI_MODEL`: *(Optional)* model name to override the default OpenAI model
- 
+- `EXPO_PUBLIC_SUPABASE_URL`
+- `EXPO_PUBLIC_SUPABASE_ANON_KEY`
+- `EXPO_PUBLIC_API_BASE`
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE`
+- `OPENAI_API_KEY`
+- `OPENAI_MODEL` *(optional)*
+- `OURA_CLIENT_ID`
+- `OURA_CLIENT_SECRET`
+- `OURA_REDIRECT_URI`
+- `JWT_SECRET`
+- `CRON_SECRET`
+
 ### API
 
 - `POST /api/calculate-score` – accepts metrics such as HRV, RHR, sleep score, lab values, and nutrition adherence and returns a 0–100 inflammation score with component breakdown.
+- `POST /api/healthgpt/chat` – chat endpoint that references the user's latest stored inflammation score.
