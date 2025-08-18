@@ -1,0 +1,8 @@
+{
+  "name": "backend",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.3",
+    "openai": "^4.0.0"
+  }
+}

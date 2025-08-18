@@ -24,7 +24,7 @@ export default function Chat() {
     );
 
     try {
-      const response = await fetch('/api/healthgpt', {
+      const response = await fetch('/api/healthgpt/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
