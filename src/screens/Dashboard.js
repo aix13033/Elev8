@@ -18,9 +18,10 @@ export default function Dashboard({ navigation }) {
   useEffect(() => {
     async function loadMetrics() {
       try {
-        const res = await fetch('/api/oura-metrics');
-        if (!res.ok) throw new Error('network');
+        const base = process.env.EXPO_PUBLIC_API_BASE || '';
+        const res = await fetch(`${base}/api/oura-metrics`);
         const data = await res.json();
+        if (!res.ok) throw new Error(data?.error || 'network');
         setMetrics(data);
       } catch (err) {
         console.error(err);
