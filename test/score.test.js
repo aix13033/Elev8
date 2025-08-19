@@ -1,5 +1,22 @@
+
+---
+
+# tests/score.test.mjs (final)
+
+> This version works even if `score.js` is located in either `backend/lib/` **or** `lib/`.  
+> (Uses dynamic import with fallback; Node 20+ ESM compatible.)
+
+```js
 import assert from 'assert';
-import { calculateScore } from '../lib/score.js';
+
+let calculateScore;
+try {
+  // Preferred: backend/lib structure
+  ({ calculateScore } = await import('../backend/lib/score.js'));
+} catch {
+  // Fallback: root lib structure
+  ({ calculateScore } = await import('../lib/score.js'));
+}
 
 // Basic sanity check
 const result = calculateScore({
@@ -16,4 +33,4 @@ assert.ok(result.score >= 0 && result.score <= 100, 'score within 0-100');
 assert.ok(result.confidence > 0, 'confidence computed');
 assert.ok(result.components.hrv, 'component hrv present');
 
-// If no assertion errors were thrown, the test passes.
+console.log('score test passed');
