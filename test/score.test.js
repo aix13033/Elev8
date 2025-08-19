@@ -1,12 +1,3 @@
-
----
-
-# tests/score.test.mjs (final)
-
-> This version works even if `score.js` is located in either `backend/lib/` **or** `lib/`.  
-> (Uses dynamic import with fallback; Node 20+ ESM compatible.)
-
-```js
 import assert from 'assert';
 
 let calculateScore;
@@ -34,3 +25,4 @@ assert.ok(result.confidence > 0, 'confidence computed');
 assert.ok(result.components.hrv, 'component hrv present');
 
 console.log('score test passed');
+
