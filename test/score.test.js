@@ -1,5 +1,22 @@
+
+---
+
+# tests/score.test.mjs (final)
+
+> This version works even if `score.js` is located in either `backend/lib/` **or** `lib/`.  
+> (Uses dynamic import with fallback; Node 20+ ESM compatible.)
+
+```js
 import assert from 'assert';
-import { calculateScore } from '../backend/lib/score.js';
+
+let calculateScore;
+try {
+  // Preferred: backend/lib structure
+  ({ calculateScore } = await import('../backend/lib/score.js'));
+} catch {
+  // Fallback: root lib structure
+  ({ calculateScore } = await import('../lib/score.js'));
+}
 
 // Basic sanity check
 const result = calculateScore({
