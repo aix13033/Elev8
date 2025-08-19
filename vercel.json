@@ -1,12 +1,8 @@
 {
-  "buildCommand": "./node_modules/.bin/expo export --platform web",
-  "outputDirectory": "dist",
-  "cleanUrls": true,
-  "framework": null,
-  "rewrites": [
-    {
-      "source": "/:path*",
-      "destination": "/"
+  "version": 2,
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs20.x"
     }
-  ]
+  }
 }
