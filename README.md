@@ -29,7 +29,6 @@ npm start
 
 Set the following environment variables for development and deployment:
 
-
 - `EXPO_PUBLIC_SUPABASE_URL`: Public URL of your Supabase instance for the Expo app
 - `EXPO_PUBLIC_SUPABASE_ANON_KEY`: Anonymous public API key for the Supabase project
 - `EXPO_PUBLIC_API_BASE`: Base URL for backend API calls from the app
@@ -48,4 +47,5 @@ Set the following environment variables for development and deployment:
 
 - `POST /api/calculate-score` – accepts metrics such as HRV, RHR, sleep score, lab values, and nutrition adherence and returns a 0–100 inflammation score with component breakdown.
 - `POST /api/healthgpt/chat` – chat endpoint that references the user's latest stored inflammation score.
+- `GET /api/oura-metrics` – returns latest wearable metrics (HRV, resting heart rate, sleep score, steps) used by the dashboard.
 

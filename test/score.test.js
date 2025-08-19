@@ -1,4 +1,5 @@
 import assert from 'assert';
+import { calculateScore } from '../lib/score.js';
 
 let calculateScore;
 try {
