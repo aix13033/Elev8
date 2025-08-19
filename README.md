@@ -48,3 +48,4 @@ Set the following environment variables for development and deployment:
 - `POST /api/calculate-score` – accepts metrics such as HRV, RHR, sleep score, lab values, and nutrition adherence and returns a 0–100 inflammation score with component breakdown.
 - `POST /api/healthgpt/chat` – chat endpoint that references the user's latest stored inflammation score.
 - `GET /api/oura-metrics` – returns latest wearable metrics (HRV, resting heart rate, sleep score, steps) used by the dashboard.
+- `POST /api/progress` – computes a "data readiness" score based on connected sources and stores it in `data_progress`.
