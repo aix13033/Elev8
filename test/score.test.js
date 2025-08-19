@@ -1,6 +1,15 @@
 import assert from 'assert';
 import { calculateScore } from '../lib/score.js';
 
+let calculateScore;
+try {
+  // Preferred: backend/lib structure
+  ({ calculateScore } = await import('../backend/lib/score.js'));
+} catch {
+  // Fallback: root lib structure
+  ({ calculateScore } = await import('../lib/score.js'));
+}
+
 // Basic sanity check
 const result = calculateScore({
   hrv: 60,
@@ -17,3 +26,4 @@ assert.ok(result.confidence > 0, 'confidence computed');
 assert.ok(result.components.hrv, 'component hrv present');
 
 console.log('score test passed');
+
