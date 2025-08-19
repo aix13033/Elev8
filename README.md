@@ -40,6 +40,9 @@ Set the following environment variables for development and deployment:
 - `OURA_CLIENT_ID`: Oura OAuth client ID
 - `OURA_CLIENT_SECRET`: Oura OAuth client secret
 - `OURA_REDIRECT_URI`: Redirect URI for the Oura OAuth callback
+- `OURA_API_TOKEN`: Server token used by background jobs to poll the Oura API
+- `OURA_WEBHOOK_SECRET`: HMAC secret to verify Oura webhook signatures
+- `SUPABASE_FUNCTIONS_URL`: Base URL for invoking other Supabase Edge Functions
 - `JWT_SECRET`: Secret used to sign and verify JWT state parameters
 - `CRON_SECRET`: Secret used to authenticate scheduled cron calls
  
@@ -49,3 +52,5 @@ Set the following environment variables for development and deployment:
 - `POST /api/healthgpt/chat` – chat endpoint that references the user's latest stored inflammation score.
 - `GET /api/oura-metrics` – aggregates Oura activity, readiness, sleep, heart rate, SpO₂, VO₂ max and more for the dashboard.
 - `POST /api/progress` – computes a "data readiness" score based on connected sources and stores it in `data_progress`.
+- **Supabase Edge Function `oura-webhook`** – validates Oura webhook calls and schedules data pulls.
+- **Supabase Edge Function `oura-poll`** – polls the Oura API for the specified window and upserts into `wearable_daily`.

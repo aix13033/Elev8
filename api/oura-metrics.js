@@ -13,9 +13,10 @@ export default async function handler(req, res) {
   }
 
   const now = new Date();
-  const end = (req.query.end_date || now.toISOString().slice(0, 10));
+  const { end_date, start_date } = req.query || {};
+  const end = end_date || now.toISOString().slice(0, 10);
   const startDate = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-  const start = (req.query.start_date || startDate.toISOString().slice(0, 10));
+  const start = start_date || startDate.toISOString().slice(0, 10);
 
   const endpoints = {
     dailyActivity: { path: '/daily_activity', params: { start_date: start, end_date: end } },
