@@ -3,6 +3,5 @@
     "api/**/*": {
       "runtime": "nodejs20.x"
     }
-  },
-  "rootDirectory": "backend"
+  }
 }
